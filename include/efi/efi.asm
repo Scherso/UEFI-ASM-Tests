@@ -87,8 +87,7 @@ EFI_INCOMPATIBLE_VERSION   equ EFI_ERROR | 25
 EFI_SYSTEM_TABLE_SIGNATURE equ 0x5453595320494249 
 
 ; Value derived from UEFI Specifications Version 2.10 § 12.9.2
-EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID equ db 0x9042A9DE, 0x23DC, 0x4A38, 0x96, 
-                                      db 0xFB, 0x7A, 0xDE, 0xD0, 0x80, 0x51, 0x6A
+EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID db 0x9042A9DE, 0x23DC, 0x4A38, 0x96, 0xFB, 0x7A, 0xDE, 0xD0, 0x80, 0x51, 0x6A
 
 ; Value derived from UEFI Specifications Version 2.10 § 4.2.1
 ; "Data structure that precedes all of the standard EFI table types."
@@ -187,4 +186,44 @@ struc EFI_RUNTIME_SERVICES
     .QueryCapsuleCapabilities            PTR
     .QueryVariableInfo                   PTR
 endstruc
+
+; Value derived from UEFI Specifications Version 2.10 § 12.4.1
+; "This protocol is used to control text-based output devices."
+struc EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL
+    .Reset                               PTR
+    .OutputString                        PTR
+    .TestString                          PTR
+    .QueryMode                           PTR
+    .SetMode                             PTR
+    .SetAttribute                        PTR
+    .ClearScreen                         PTR
+    .SetCursorPosition                   PTR
+    .EnableCursor                        PTR
+    .Mode                                PTR
+endstruc
+
+; Value derived from UEFI Specifications Version 2.10 § 12.9.
+; "The EFI_GRAPHICS_OUTPUT_PROTOCOL_MODE is read-only and values \
+; are only changed by using the appropriate interface functions."
+struc EFI_GRAPHICS_OUTPUT_PROTOCOL_MODE
+    .MaxMode                             UINT32
+    .Mode                                UINT32
+    .Info                                PTR
+    .SizeOfInfo                          UINTN
+    .FrameBufferBase                     PTR
+    .FrameBufferSize                     UINTN
+endstruc
+
+; Value derived from UEFI Specifications Version 2.10 § 12.9.2
+; "Provides a basic abstraction to set video modes and copy pixels \
+; to and from the graphics controller's frame buffer. The linear \
+; address of the hardware frame buffer is also exposed so software \
+; can write directly to the video hardware."
+struc EFI_GRAPHICS_OUTPUT_PROTOCOL
+    .QueryMode                           PTR
+    .SetMode                             PTR
+    .Blt                                 PTR
+    .Mode                                PTR
+endstruc
+
 
