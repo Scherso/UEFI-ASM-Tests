@@ -5,44 +5,43 @@
 ; UEFI Specifications Version 2.10 § 2.3.1
 ; Found in Table 2.3 "Common UEFI Data Types".
 
-%macro UINT8 0
-    RES 0
+%macro UINT8 0      ; 8-bit integer, unsigned.
+    RESB 1          ; Reserve 1 byte, which is 8 bits. 
     alignb 1
 %endmacro
 
-%macro UINT16 0
-    RES 1
+%macro UINT16 0     ; 16-bit integer, unsigned.
+    RESW 1          ; Reserve 1 word, which is 16 bits, or 2 bytes.
     alignb 2
 %endmacro
 
-%macro UINT32 0
-    RESD 1
+%macro UINT32 0     ; 32-bit integer, unsigned.
+    RESD 1          ; Reserve a single precision real, which is 32 bits, or 4 bytes.
     alignb 4
 %endmacro
 
-%macro UINT64 0
-    RESQ 1
+%macro UINT64 0     ; 64-bit integer, unsigned.
+    RESQ 1          ; Reserve a double precision real, which is 64 bits, or 8 bytes.
     alignb 8
 %endmacro
 
-%macro UINTN 0
-    RESQ 1
+%macro UINTN 0      ; Mnemonic for the native integer size of AMD64, 64-bits, unsigned.
+    RESQ 1          ; Reserve a double precision real, which is 64 bits, or 8 bytes.
     alignb 8
 %endmacro
 
-%macro CHAR8 0
-    RES 0
+%macro CHAR8 0      ; 8-bit character.
+    RESB 1          ; Reserve one byte, which is 8 bits.
     alignb 1
 %endmacro
 
-%macro CHAR16 0
-    RES 1
+%macro CHAR16 0     ; 16-bit character.
+    RESW 1          ; Reserve one word, which is 16 bits, or 2 bytes.
     alignb 2
 %endmacro
 
-; Not in any accordance, used as a data pointer.
-%macro PTR 0
-    RESQ 1
+%macro PTR 0        ; 64-bit data pointer.
+    RESQ 1          ; Reserve a double precision real, which is 64 bits, or 8 bytes.
     alignb 8
 %endmacro
 
