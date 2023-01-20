@@ -54,7 +54,7 @@ EFI_WARN  equ 0x0000000000000000 ; Max: 0x1FFFFFFFFFFFFFFF
 
 ; Following mneumonics are in accordance with
 ; UEFI Specification Version 2.10 Appendix D
-; Found in Table 240 "EFI_STATUS Error Codes (High Bit Set)".
+; Found in Table D.3 "EFI_STATUS Error Codes (High Bit Set)".
 EFI_SUCCESS                equ 0
 EFI_LOAD_ERROR             equ EFI_ERROR | 1
 EFI_INVALID_PARAMETER      equ EFI_ERROR | 2
@@ -81,6 +81,18 @@ EFI_ICMP_ERROR             equ EFI_ERROR | 22
 EFI_TFTP_ERROR             equ EFI_ERROR | 23
 EFI_PROTOCOL_ERROR         equ EFI_ERROR | 24
 EFI_INCOMPATIBLE_VERSION   equ EFI_ERROR | 25
+EFI_SECURITY_VIOLATION     equ EFI_ERROR | 26
+
+; Following mneumonics are in accordance with
+; UEFI Specification Version 2.10 Appendix D 
+; Found in Table D.4 "EFI_STATUS Warning Codes (High Bit Clear)".
+EFI_WARN_UNKNOWN_GLYPH     equ  EFI_WARN | 1
+EFI_WARN_DELETE_FAILURE    equ  EFI_WARN | 2
+EFI_WARN_WRITE_FAILURE     equ  EFI_WARN | 3
+EFI_WARN_BUFFER_TOO_SMALL  equ  EFI_WARN | 4
+EFI_WARN_STALE_DATA        equ  EFI_WARN | 5
+EFI_WARN_FILE_SYSTEM       equ  EFI_WARN | 6
+EFI_WARN_RESET_REQUIRED    equ  EFI_WARN | 7
 
 ; Value derived from UEFI Specifications Version 2.10 § 4.3.1
 EFI_SYSTEM_TABLE_SIGNATURE equ 0x5453595320494249 
