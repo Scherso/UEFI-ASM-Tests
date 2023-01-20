@@ -56,15 +56,15 @@ EFI_WARN  equ 0x0000000000000000 ; Max: 0x1FFFFFFFFFFFFFFF
 ; Following mneumonics are in accordance with
 ; UEFI Specification Version 2.10 Appendix D
 ; Found in Table 240 "EFI_STATUS Error Codes (High Bit Set)".
-EFI_SUCCESS	               equ 0
+EFI_SUCCESS                equ 0
 EFI_LOAD_ERROR             equ EFI_ERROR | 1
 EFI_INVALID_PARAMETER      equ EFI_ERROR | 2
 EFI_UNSUPPORTED            equ EFI_ERROR | 3
-EFI_BAD_BUFFER_SIZE	       equ EFI_ERROR | 4
+EFI_BAD_BUFFER_SIZE        equ EFI_ERROR | 4
 EFI_BUFFER_TOO_SMALL       equ EFI_ERROR | 5
 EFI_NOT_READY              equ EFI_ERROR | 6
 EFI_DEVICE_ERROR           equ EFI_ERROR | 7
-EFI_WRITE_PROTECTED	       equ EFI_ERROR | 8
+EFI_WRITE_PROTECTED        equ EFI_ERROR | 8
 EFI_OUT_OF_RESOURCES       equ EFI_ERROR | 9
 EFI_VOLUME_CORRUPTED       equ EFI_ERROR | 10
 EFI_VOLUME_FULL            equ EFI_ERROR | 11
@@ -74,9 +74,9 @@ EFI_NOT_FOUND              equ EFI_ERROR | 14
 EFI_ACCESS_DENIED          equ EFI_ERROR | 15
 EFI_NO_RESPONSE            equ EFI_ERROR | 16
 EFI_NO_MAPPING             equ EFI_ERROR | 17
-EFI_TIMEOUT	               equ EFI_ERROR | 18
+EFI_TIMEOUT                equ EFI_ERROR | 18
 EFI_NOT_STARTED            equ EFI_ERROR | 19
-EFI_ALREADY_STARTED	       equ EFI_ERROR | 20
+EFI_ALREADY_STARTED        equ EFI_ERROR | 20
 EFI_ABORTED                equ EFI_ERROR | 21
 EFI_ICMP_ERROR             equ EFI_ERROR | 22
 EFI_TFTP_ERROR             equ EFI_ERROR | 23
