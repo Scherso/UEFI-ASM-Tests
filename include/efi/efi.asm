@@ -225,5 +225,3 @@ struc EFI_GRAPHICS_OUTPUT_PROTOCOL
     .Blt                                 PTR
     .Mode                                PTR
 endstruc
-
-
