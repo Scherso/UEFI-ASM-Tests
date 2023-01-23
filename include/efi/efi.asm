@@ -1,5 +1,5 @@
 ; Author: Scherso (https://github.com/scherso)
-; All rights reserved unless said otherwise.
+; MIT License, take what u want :)
 
 ; Following structure is in accordance with
 ; UEFI Specifications Version 2.10 § 2.3.1
