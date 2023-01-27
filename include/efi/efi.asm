@@ -1,5 +1,7 @@
 ; Author: Scherso (https://github.com/scherso)
 ; MIT License, take what u want :)
+; Based on Darwins 'efi.h'. Repository location, 'darwin-xnu/pexpert/pexpert/i386/efi.h'
+; Based on FASM's 'UEFI.inc'.
 
 ; Following structure is in accordance with
 ; UEFI Specifications Version 2.10 § 2.3.1
