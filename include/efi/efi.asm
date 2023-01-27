@@ -98,7 +98,8 @@ EFI_WARN_RESET_REQUIRED    equ  EFI_WARN | 7
 EFI_SYSTEM_TABLE_SIGNATURE equ 0x5453595320494249 
 
 ; Value derived from UEFI Specifications Version 2.10 § 12.9.2
-EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID db 0x9042A9DE, 0x23DC, 0x4A38, 0x96, 0xFB, 0x7A, 0xDE, 0xD0, 0x80, 0x51, 0x6A
+EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID db 0xDE, 0xA9, 0x42, 0x90, 0xDC, 0x23, 0x38, 0x4A 
+                                  db 0x96, 0xFB, 0x7A, 0xDE, 0xD0, 0x80, 0x51, 0x6A
 
 ; Value derived from UEFI Specifications Version 2.10 § 4.2.1
 ; "Data structure that precedes all of the standard EFI table types."
