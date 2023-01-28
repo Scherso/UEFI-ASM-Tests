@@ -103,6 +103,10 @@ EFI_SYSTEM_TABLE_SIGNATURE equ 0x5453595320494249
 EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID db 0xDE, 0xA9, 0x42, 0x90, 0xDC, 0x23, 0x38, 0x4A 
                                   db 0x96, 0xFB, 0x7A, 0xDE, 0xD0, 0x80, 0x51, 0x6A
 
+; Value derived from UEFI Specifications Version 2.10 § 12.3.1
+EFI_SIMPLE_TEXT_INPUT_PROTOCOL_GUID db 0xC1, 0x77, 0x74, 0x38, 0xC7, 0x69, 0xD2, 0x11
+                                    db 0x8E, 0x39, 0x00, 0xA0, 0xC9, 0x69, 0x72, 0x3B
+
 ; Value derived from UEFI Specifications Version 2.10 § 4.2.1
 ; "Data structure that precedes all of the standard EFI table types."
 struc EFI_TABLE_HEADER
@@ -199,6 +203,14 @@ struc EFI_RUNTIME_SERVICES
     .UpdateCapsule                       PTR
     .QueryCapsuleCapabilities            PTR
     .QueryVariableInfo                   PTR
+endstruc
+
+; Value derived from UEFI Specifications Version 2.10 § 12.3.1
+; "This protocol is used to obtain input from the ConsoleIn device."
+struc EFI_SIMPLE_TEXT_INPUT_PROTOCOL
+    .Reset                               PTR
+    .ReadKeyStroke                       PTR
+    .WaitForKey                          PTR
 endstruc
 
 ; Value derived from UEFI Specifications Version 2.10 § 12.4.1
