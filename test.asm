@@ -6,7 +6,7 @@ bits 64
 ; To produce a '.efi' PIE file
 ; nasm -f win64 -o test.obj test.asm
 ; lld-link -subsystem:efi_application -entry:_start \ 
-; -dll -nodefaultlib test.obj -out:test.efi
+; -nodefaultlib test.obj -out:test.efi
 ; From here you can copy to a fat filesystem image.
 
 %include "include/efi/efi.asm"
@@ -16,7 +16,7 @@ global _start
 section .text
 
 _start:
-        sub    rsp, [4 * 8]                                          ; Reserving four arguments.
+        sub    rsp, [2 * 4]                                          ; Reserving two arguments.
         ; RDX = EFI_SYSTEM_TABLE
         mov    rcx, [rdx + EFI_SYSTEM_TABLE.ConOut]                  ; Moving 'ConOut' to our system table structure.
         lea    rdx, [rel message]                                    ; Loading our string register onto register 'RDX'.
@@ -25,4 +25,4 @@ _start:
         jmp $                                                        ; Jumping to this instruction, this will allow us to see output.
 
 section .data
-    message dw "Hello, World!",13,10,0
+    message dw __utf16__ "Hello, World!", 13, 10, 0
