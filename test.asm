@@ -25,4 +25,4 @@ _start:
         jmp $                                                        ; Jumping to this instruction, this will allow us to see output.
 
 section .data
-    message dw __utf16__ "Hello, World!", 13, 10, 0
+    message dw "Hello, World!", 13, 10, 0
