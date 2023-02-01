@@ -33,9 +33,4 @@ _start:
 ;       jmp      $ 
 
 section .data
-<<<<<<< HEAD
-
-message dw __utf16__ "Hello, World!",13,10,0
-=======
-    message dw __utf16__ "Hello, World!", 13, 10, 0
->>>>>>> refs/remotes/origin/main
+message dw __utf16__ "Hello, World!", 13, 10, 0
