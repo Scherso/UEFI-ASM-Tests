@@ -16,13 +16,22 @@ global _start
 section .text
 
 _start:
-        sub    rsp, [2 * 4]                                          ; Reserving two arguments.
+        sub     rsp, [2 * 4]                                          ; Reserving two arguments.
         ; RDX = EFI_SYSTEM_TABLE
-        mov    rcx, [rdx + EFI_SYSTEM_TABLE.ConOut]                  ; Moving 'ConOut' to our system table structure.
-        lea    rdx, [rel message]                                    ; Loading our string register onto register 'RDX'.
-        call   [rcx + EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL.OutputString]  ; Calling 'OutputString' by the value of register 'RDX'.
+        mov     rcx, [rdx + EFI_SYSTEM_TABLE.ConOut]                  ; Moving 'ConOut' (0x40) to our system table structure.
+        lea     rdx, [rel message]                                    ; Loading our string register onto register 'RDX'.
+        call    [rcx + EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL.OutputString]  ; Calling 'OutputString' (0x8) by the value of register 'RDX'.
 
-        jmp $                                                        ; Jumping to this instruction, this will allow us to see output.
+        jmp     $                                                     ; Jumping to this instruction, this will allow us to see output.
+
+; Equivalent of the following, when not using headers/structures. 
+;       sub      rsp, [2 * 4]
+;       mov      rcx, [rdx + 0x40]
+;       lea      rdx, [rel message]
+;       call     [rcx + 0x8]
+;
+;       jmp      $ 
 
 section .data
-    message dw __utf16__ "Hello, World!",13,10,0
+
+message dw __utf16__ "Hello, World!",13,10,0
