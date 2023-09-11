@@ -9,7 +9,7 @@ bits 64
 ; -nodefaultlib test.obj -out:test.efi
 ; From here you can copy to a fat filesystem image.
 
-%include "include/efi/efi.asm"
+%include "src/include/efi/efi.asm"
 
 global _start
 
