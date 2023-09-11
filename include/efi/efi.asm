@@ -51,53 +51,53 @@
 ; UEFI Specification Version 2.10 Appendix D
 ; Found in Table 238 "EFI_STATUS Code Ranges".
 ; 64-bit ranges in use, 32-bit ranges are not used.
-EFI_ERROR equ 0x8000000000000000 ; Max: 0x9FFFFFFFFFFFFFFF 
-EFI_WARN  equ 0x0000000000000000 ; Max: 0x1FFFFFFFFFFFFFFF 
+EFI_ERROR                          equ 0x8000000000000000 ; Max: 0x9FFFFFFFFFFFFFFF 
+EFI_WARN                           equ 0x0000000000000000 ; Max: 0x1FFFFFFFFFFFFFFF 
 
 ; Following mneumonics are in accordance with
 ; UEFI Specification Version 2.10 Appendix D
 ; Found in Table D.3 "EFI_STATUS Error Codes (High Bit Set)".
-EFI_SUCCESS                equ 0
-EFI_LOAD_ERROR             equ EFI_ERROR | 1
-EFI_INVALID_PARAMETER      equ EFI_ERROR | 2
-EFI_UNSUPPORTED            equ EFI_ERROR | 3
-EFI_BAD_BUFFER_SIZE        equ EFI_ERROR | 4
-EFI_BUFFER_TOO_SMALL       equ EFI_ERROR | 5
-EFI_NOT_READY              equ EFI_ERROR | 6
-EFI_DEVICE_ERROR           equ EFI_ERROR | 7
-EFI_WRITE_PROTECTED        equ EFI_ERROR | 8
-EFI_OUT_OF_RESOURCES       equ EFI_ERROR | 9
-EFI_VOLUME_CORRUPTED       equ EFI_ERROR | 10
-EFI_VOLUME_FULL            equ EFI_ERROR | 11
-EFI_NO_MEDIA               equ EFI_ERROR | 12
-EFI_MEDIA_CHANGED          equ EFI_ERROR | 13
-EFI_NOT_FOUND              equ EFI_ERROR | 14
-EFI_ACCESS_DENIED          equ EFI_ERROR | 15
-EFI_NO_RESPONSE            equ EFI_ERROR | 16
-EFI_NO_MAPPING             equ EFI_ERROR | 17
-EFI_TIMEOUT                equ EFI_ERROR | 18
-EFI_NOT_STARTED            equ EFI_ERROR | 19
-EFI_ALREADY_STARTED        equ EFI_ERROR | 20
-EFI_ABORTED                equ EFI_ERROR | 21
-EFI_ICMP_ERROR             equ EFI_ERROR | 22
-EFI_TFTP_ERROR             equ EFI_ERROR | 23
-EFI_PROTOCOL_ERROR         equ EFI_ERROR | 24
-EFI_INCOMPATIBLE_VERSION   equ EFI_ERROR | 25
-EFI_SECURITY_VIOLATION     equ EFI_ERROR | 26
+EFI_SUCCESS                        equ 0
+EFI_LOAD_ERROR                     equ EFI_ERROR | 1
+EFI_INVALID_PARAMETER              equ EFI_ERROR | 2
+EFI_UNSUPPORTED                    equ EFI_ERROR | 3
+EFI_BAD_BUFFER_SIZE                equ EFI_ERROR | 4
+EFI_BUFFER_TOO_SMALL               equ EFI_ERROR | 5
+EFI_NOT_READY                      equ EFI_ERROR | 6
+EFI_DEVICE_ERROR                   equ EFI_ERROR | 7
+EFI_WRITE_PROTECTED                equ EFI_ERROR | 8
+EFI_OUT_OF_RESOURCES               equ EFI_ERROR | 9
+EFI_VOLUME_CORRUPTED               equ EFI_ERROR | 10
+EFI_VOLUME_FULL                    equ EFI_ERROR | 11
+EFI_NO_MEDIA                       equ EFI_ERROR | 12
+EFI_MEDIA_CHANGED                  equ EFI_ERROR | 13
+EFI_NOT_FOUND                      equ EFI_ERROR | 14
+EFI_ACCESS_DENIED                  equ EFI_ERROR | 15
+EFI_NO_RESPONSE                    equ EFI_ERROR | 16
+EFI_NO_MAPPING                     equ EFI_ERROR | 17
+EFI_TIMEOUT                        equ EFI_ERROR | 18
+EFI_NOT_STARTED                    equ EFI_ERROR | 19
+EFI_ALREADY_STARTED                equ EFI_ERROR | 20
+EFI_ABORTED                        equ EFI_ERROR | 21
+EFI_ICMP_ERROR                     equ EFI_ERROR | 22
+EFI_TFTP_ERROR                     equ EFI_ERROR | 23
+EFI_PROTOCOL_ERROR                 equ EFI_ERROR | 24
+EFI_INCOMPATIBLE_VERSION           equ EFI_ERROR | 25
+EFI_SECURITY_VIOLATION             equ EFI_ERROR | 26
 
 ; Following mneumonics are in accordance with
 ; UEFI Specification Version 2.10 Appendix D 
 ; Found in Table D.4 "EFI_STATUS Warning Codes (High Bit Clear)".
-EFI_WARN_UNKNOWN_GLYPH     equ  EFI_WARN | 1
-EFI_WARN_DELETE_FAILURE    equ  EFI_WARN | 2
-EFI_WARN_WRITE_FAILURE     equ  EFI_WARN | 3
-EFI_WARN_BUFFER_TOO_SMALL  equ  EFI_WARN | 4
-EFI_WARN_STALE_DATA        equ  EFI_WARN | 5
-EFI_WARN_FILE_SYSTEM       equ  EFI_WARN | 6
-EFI_WARN_RESET_REQUIRED    equ  EFI_WARN | 7
+EFI_WARN_UNKNOWN_GLYPH             equ  EFI_WARN | 1
+EFI_WARN_DELETE_FAILURE            equ  EFI_WARN | 2
+EFI_WARN_WRITE_FAILURE             equ  EFI_WARN | 3
+EFI_WARN_BUFFER_TOO_SMALL          equ  EFI_WARN | 4
+EFI_WARN_STALE_DATA                equ  EFI_WARN | 5
+EFI_WARN_FILE_SYSTEM               equ  EFI_WARN | 6
+EFI_WARN_RESET_REQUIRED            equ  EFI_WARN | 7
 
 ; Value derived from UEFI Specifications Version 2.10 § 4.3.1
-EFI_SYSTEM_TABLE_SIGNATURE equ 0x5453595320494249 
+EFI_SYSTEM_TABLE_SIGNATURE         equ 0x5453595320494249 
 
 ; Value derived from UEFI Specifications Version 2.10 § 12.9.2
 EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID   db 0xDE, 0xA9, 0x42, 0x90, 0xDC, 0x23, 0x38, 0x4A 
